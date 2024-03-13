@@ -1,4 +1,4 @@
-import { AUTH_GOOGLE } from "./authTypes";
+import { AUTH_GOOGLE } from "../../actions/auth/authTypes";
 
 const initialState = {
   isLoggedIn: false,

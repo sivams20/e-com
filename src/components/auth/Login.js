@@ -1,9 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useGoogleLogin } from "@react-oauth/google";
+import { setUser } from "../../redux/actions/auth/authActions";
 
 function Login() {
+  const dispatch = useDispatch();
+
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => console.log(codeResponse),
+    onSuccess: (codeResponse) => {
+      console.log(codeResponse);
+      dispatch(setUser(codeResponse));
+    },
   });
 
   return (
